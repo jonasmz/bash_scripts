@@ -1,0 +1,10 @@
+alias cls='clear'
+alias deledir='rm -rf'
+alias mkdiry='(){mkdir $1 && cd $1}'
+alias vminedu='sudo wg-quick up jmz_minedu'
+alias ssh-github='ssh-add /home/jonasmz/.ssh/github_ed25519'
+alias ssh-minedu='ssh-add /home/jonasmz/.ssh/jmz_azminedu'
+alias ssh-jonasmz-devops='ssh-add /home/jonasmz/.ssh/jonasmz.dev@azure-devops'
+alias load-minedu-env='source ~/Workspace/Minedu/venv/bin/activate'
+
+alias lint='ansible-lint'
