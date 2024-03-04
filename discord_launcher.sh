@@ -14,32 +14,32 @@ Path=/usr/bin"
 
 download_app(){
 	echo "Comenzando la descarga"
-	wget -O /tmp/discord.tar.gz $url
+        sudo wget -O /tmp/discord.tar.gz $url
 	echo "Descarga finalizada"
 }
 install(){
 	echo "Iniciando la instalacion"
 	download_app
-	tar -xvzf /tmp/discord.tar.gz -C /opt
-	ln -sf /opt/Discord/Discord /usr/bin/Discord
-	echo "$desktop_entry" >> /usr/share/applications/discord.desktop
+	sudo tar -xvzf /tmp/discord.tar.gz -C /opt
+	sudo ln -sf /opt/Discord/Discord /usr/bin/Discord
+        sudo echo "$desktop_entry" >> ~/.local/share/applications/discord.desktop
 	echo "La instalacion ha finalizado"
 	echo ""
 }
 update(){
 	echo "Iniciando la actualizacion"
-	rm -rf /opt/Discord
+	sudo rm -rf /opt/Discord
 	download_app
-	tar -xvzf /tmp/discord.tar.gz -C /opt
+	sudo tar -xvzf /tmp/discord.tar.gz -C /opt
 	echo "La actualizacion ha finalizado"
 	echo ""
 }
 remove(){
 	echo "Eliminando la aplicacion"
-	rm -r ~/.config/discord
-	rm -rf /opt/Discord
-	rm /usr/bin/Discord
-	rm /usr/share/applications/discord.desktop
+	sudo rm -r ~/.config/discord
+	sudo rm -rf /opt/Discord
+	sudo rm /usr/bin/Discord
+	sudo rm ~/.local/share/applications/discord.desktop
 	echo "La aplicacion ha sido eliminada"
 	echo ""
 }
